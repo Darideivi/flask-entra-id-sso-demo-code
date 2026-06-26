@@ -1,4 +1,4 @@
-# flask-entra-id-sso-demo
+# flask-Entra-ID-SSO-demo
 
 This is a Python Flask web application that integrates with Microsoft Entra ID for Single Sign-On (SSO) authentication using OpenID Connect and OAuth 2.0.
 
