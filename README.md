@@ -4,12 +4,6 @@ This is a Python Flask web application that integrates with Microsoft Entra ID f
 
 ---
 
-## 🔗 Project Code
-The complete source code for this project is available here:
-
-**Repository:** https://github.com/Darideivi/flask-entra-id-sso-code
----
-
 ## Project Walkthrough
 This project demonstrates how to integrate a Python Flask web application with Microsoft Entra ID for Single Sign-On (SSO) authentication using OAuth 2.0, OpenID Connect, and the Microsoft Authentication Library (MSAL).
 First, I built a small App using Flask, just a basic login page.
