@@ -7,14 +7,16 @@ This is a Python Flask web application that integrates with Microsoft Entra ID f
 ## Project Walkthrough
 This project demonstrates how to integrate a Python Flask web application with Microsoft Entra ID for Single Sign-On (SSO) authentication using OAuth 2.0, OpenID Connect, and the Microsoft Authentication Library (MSAL).
 First, I built a small App using Flask, just a basic login page.
-<img width="700" alt="App_start" src="https://github.com/user-attachments/assets/efbbfa56-3544-4673-ae07-73999460e184" />
+<img width="1507" height="937" alt="1 1-SSO" src="https://github.com/user-attachments/assets/1d75ee7a-3392-4120-b5a4-ba37ed182a3b" />
+
 
 ---
 
 
 ### 1. Flask Login Page
 
-<img width="700" alt="1 1-SSO (2)" src="https://github.com/user-attachments/assets/488c9095-a0d4-4410-9cd0-e84e3192f866" />
+<img width="1505" height="691" alt="1 1-SSO (2)" src="https://github.com/user-attachments/assets/ac17a87c-4ee3-4e39-9b65-7d4b1b82a454" />
+
 
 The application's landing page. Users can initiate the Microsoft Entra ID authentication process by selecting **Login with Microsoft**.
 
@@ -22,7 +24,8 @@ The application's landing page. Users can initiate the Microsoft Entra ID authen
 
 ### 2. Azure App Registration
 
-<img width="708" alt="1 2-SSO" src="https://github.com/user-attachments/assets/d482988b-8821-4b9d-a613-e2f658982081" />
+<img width="1898" height="722" alt="1 2-SSO" src="https://github.com/user-attachments/assets/299ae1e3-021c-4017-92ff-8468905a78ad" />
+
 
 A new application registration is created in Microsoft Entra ID. This establishes trust between the Flask application and Microsoft's identity platform.
 
@@ -30,7 +33,8 @@ A new application registration is created in Microsoft Entra ID. This establishe
 
 ### 3. Redirect URI Configuration
 
-<img width="1000" alt="1 3-SSO" src="https://github.com/user-attachments/assets/49f1ce66-16e4-4305-8207-e571bde6b75b" />
+<img width="1631" height="978" alt="1 3-SSO" src="https://github.com/user-attachments/assets/ad224318-b1ac-466c-83d2-3eef3b607c53" />
+
 
 The redirect URI is configured during app registration. After successful authentication, Microsoft redirects users back to this URL where the Flask application processes the authorization response. Note that the URL in your terminal is http://127.0.0.1:5000 ->, but here you need to changed to http://localhost:5000/getAToken
 
@@ -38,7 +42,8 @@ The redirect URI is configured during app registration. After successful authent
 
 ### 4. Application Registration Overview
 
-<img width="1337" alt="1 4-SSO" src="https://github.com/user-attachments/assets/9bf6771a-a866-4013-bcf2-265825b4ae1f" />
+<img width="1637" height="642" alt="1 4-SSO" src="https://github.com/user-attachments/assets/f7ddc8c0-2935-4dc6-8a3c-faa125396583" />
+
 
 Overview page showing the application's Client ID and Tenant ID. These identifiers are used by MSAL to connect the Flask application to the correct Entra ID tenant.
 
@@ -46,7 +51,7 @@ Overview page showing the application's Client ID and Tenant ID. These identifie
 
 ### 5. MSAL Configuration in Flask
 
-<img width="759" alt="1 5-SSO" src="https://github.com/user-attachments/assets/21dec86e-3f47-4ae6-90d7-c55c45c628b7" />
+<img width="1059" height="696" alt="1 5-SSO" src="https://github.com/user-attachments/assets/c7a56306-def6-48b8-9023-fa94d0b96dc8" />
 
 The Flask application imports MSAL and creates a Confidential Client Application using the Client ID, Tenant ID, and Client Secret. This enables secure communication with Microsoft Entra ID.
 
@@ -54,7 +59,8 @@ The Flask application imports MSAL and creates a Confidential Client Application
 
 ### 6. Login and Authorization Callback Routes
 
-<img width="1006" alt="1 6-SSO12" src="https://github.com/user-attachments/assets/38f31f7d-aef8-45a8-b380-76984c49b291" />
+<img width="1306" height="720" alt="1 6-SSO12" src="https://github.com/user-attachments/assets/abec1ac0-881e-4c55-a38c-6a64c00a40cd" />
+
 
 The `/login` route redirects users to Microsoft for authentication, while the `/getAToken` callback route receives the authorization code and exchanges it for authentication tokens.
 
@@ -62,7 +68,8 @@ The `/login` route redirects users to Microsoft for authentication, while the `/
 
 ### 7. Microsoft Sign-In Experience
 
-<img width="1190" alt="3-SSO" src="https://github.com/user-attachments/assets/ee550b65-0e65-47e9-a8f0-3661ad5980fd" />
+<img width="1490" height="702" alt="3-SSO" src="https://github.com/user-attachments/assets/c6861e1c-829f-4c49-bfa1-5613b5208bbb" />
+
 
 Users authenticate through Microsoft's hosted sign-in page, ensuring credentials are never handled directly by the Flask application.
 
@@ -70,7 +77,8 @@ Users authenticate through Microsoft's hosted sign-in page, ensuring credentials
 
 ### 8. Multi-Factor Authentication (MFA)
 
-<img width="1011" alt="4-SSO" src="https://github.com/user-attachments/assets/cf112320-e521-4a29-a4c0-1d08401da730" />
+<img width="1311" height="667" alt="4-SSO" src="https://github.com/user-attachments/assets/2e46d270-60cf-448f-a5dc-2b212c95364e" />
+
 
 After entering credentials, users complete Multi-Factor Authentication (MFA). This adds an additional layer of security to the sign-in process.
 
@@ -78,7 +86,8 @@ After entering credentials, users complete Multi-Factor Authentication (MFA). Th
 
 ### 9. Logout Flow
 
-<img width="782" alt="1 6-SSO" src="https://github.com/user-attachments/assets/88e1c3b7-8b47-4a9c-b20a-cf4a7335386f" />
+<img width="782" height="520" alt="1 6-SSO" src="https://github.com/user-attachments/assets/63517ca3-c8b1-4762-b8ab-54a4e428bda1" />
+
 
 When users sign out, the Flask session is cleared and Microsoft terminates the authenticated session, completing the logout process.
 
